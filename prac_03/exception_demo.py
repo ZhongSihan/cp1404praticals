@@ -14,6 +14,7 @@ Answer the following questions:
      and prompt the user again until it's not zero.
 """
 
+
 try:
     numerator = int(input("Enter the numerator: "))
     denominator = int(input("Enter the denominator: "))
