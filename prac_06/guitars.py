@@ -1,6 +1,6 @@
 """guitars.py
 Estimate: 20 minutes
-Actual:
+Actual:21 minutes
 """
 
 from guitar import Guitar
