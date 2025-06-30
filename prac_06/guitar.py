@@ -1,6 +1,6 @@
 """guitar.py
 Estimate: 15 minutes
-Actual:
+Actual:13 minutes
 """
 
 class Guitar:
