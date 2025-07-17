@@ -1,0 +1,39 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 10
+    spacing: 10
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+
+        TextInput:
+            id: input_miles
+            text: '0'
+            font_size: 32
+            input_filter: 'float'
+            on_text: app.handle_calculate()
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_x: 0.3
+            spacing: 5
+
+            Button:
+                text: 'Up'
+                on_press: app.handle_increment(1)
+
+            Button:
+                text: 'Down'
+                on_press: app.handle_increment(-1)
+
+    Label:
+        id: output_label
+        text: '0.0'
+        font_size: 48
+        color: (1, 0.5, 0, 1)  # orange color
+
+    Label:
+        text: 'Enter a number and it converts automatically'
+        font_size: 16
+        color: (0.7, 0.7, 0.7, 1)
