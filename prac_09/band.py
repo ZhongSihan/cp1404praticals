@@ -14,3 +14,13 @@ class Musician:
             return f"{self.name} ({instruments_str})"
         else:
             return f"{self.name} (needs an instrument!)"
+
+class Instrument:
+    def __init__(self, name, year, price):
+        self.name = name
+        self.year = year
+        self.price = price
+
+    def __str__(self):
+        """Return a string representation of the instrument."""
+        return f"{self.name} ({self.year}) : ${self.price:.2f}"
