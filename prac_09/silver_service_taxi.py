@@ -1,20 +1,19 @@
-from prac_09.taxi import Taxi
+from taxi import Taxi
 
 class SilverServiceTaxi(Taxi):
-    """A special version of Taxi with an additional charge based on fanciness."""
-
-    flagfall = 4.50  # Flat flagfall charge for every fare
+    """A Silver Service Taxi that includes a flagfall and fancy pricing."""
+    flagfall = 4.50
 
     def __init__(self, name, fuel, fanciness):
-        """Initialise a SilverServiceTaxi instance with an extra charge based on fanciness."""
+        """Initialise a SilverServiceTaxi with fancy pricing."""
         super().__init__(name, fuel)
         self.fanciness = fanciness
-        self.price_per_km *= self.fanciness  # Adjust price per km based on fanciness
-
-    def get_fare(self):
-        """Return the total fare including the flagfall and adjusted price."""
-        return super().get_fare() + self.flagfall
+        self.price_per_km *= self.fanciness  # Adjust the price per km based on fanciness
 
     def __str__(self):
-        """Return a string including flagfall and the adjusted price per km."""
+        """Return a string representation of the SilverServiceTaxi."""
         return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+
+    def get_fare(self):
+        """Return the fare for the trip including the flagfall."""
+        return super().get_fare() + self.flagfall
