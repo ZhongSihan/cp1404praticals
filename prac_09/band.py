@@ -24,3 +24,17 @@ class Instrument:
     def __str__(self):
         """Return a string representation of the instrument."""
         return f"{self.name} ({self.year}) : ${self.price:.2f}"
+
+class Band:
+    def __init__(self, name):
+        self.name = name
+        self.musicians = []
+
+    def add_musician(self, musician):
+        """Add a musician to the band."""
+        self.musicians.append(musician)
+
+    def __str__(self):
+        """Return a string representation of the band and its musicians."""
+        musicians_str = ', '.join(str(musician) for musician in self.musicians)
+        return f"{self.name} ({musicians_str})"
