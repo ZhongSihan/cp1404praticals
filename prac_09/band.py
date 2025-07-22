@@ -38,3 +38,12 @@ class Band:
         """Return a string representation of the band and its musicians."""
         musicians_str = ', '.join(str(musician) for musician in self.musicians)
         return f"{self.name} ({musicians_str})"
+
+    def play(self):
+        """Simulate the band playing, where each musician either plays their instrument or needs one."""
+        for musician in self.musicians:
+            if musician.instruments:
+                for instrument in musician.instruments:
+                    print(f"{musician.name} is playing: {instrument}")
+            else:
+                print(f"{musician.name} needs an instrument!")
