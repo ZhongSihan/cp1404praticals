@@ -1,10 +1,9 @@
-"""CP1404/CP5632 Practical - Taxi class"""
 from prac_09.car import Car
-
 
 class Taxi(Car):
     """Specialised version of a Car that includes fare costs."""
-    price_per_km = 1.23  # Class variable shared by all Taxi instances
+
+    price_per_km = 1.23  # Class variable for price per km, shared by all Taxi instances
 
     def __init__(self, name, fuel):
         """Initialise a Taxi instance, based on parent class Car."""
@@ -18,7 +17,7 @@ class Taxi(Car):
     def get_fare(self):
         """Return the price for the taxi trip, rounded to nearest 10c."""
         fare = self.price_per_km * self.current_fare_distance
-        return round(fare, 1)
+        return round(fare, 1)  # Round to nearest 0.10
 
     def start_fare(self):
         """Begin a new fare."""

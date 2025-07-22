@@ -1,18 +1,21 @@
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
 
-def main():
-    """Test SilverServiceTaxi fare calculations."""
-    taxi = SilverServiceTaxi("Hummer", 200, 4)
-    print(taxi)  # Should include price per km and flagfall
+def test_silver_service_taxi():
+    """Test SilverServiceTaxi functionality."""
+    taxi = SilverServiceTaxi("Hummer", 200, 2)
+    taxi.start_fare()
 
+    # Drive 18 km and calculate fare
     taxi.drive(18)
     fare = taxi.get_fare()
-    print(f"Fare for 18km trip: ${fare:.2f}")
 
-    # Assert expected fare: (1.23 * 4) * 18 + 4.50 = 48.78
-    assert round(fare, 2) == 48.78, f"Expected $48.78, got ${fare:.2f}"
+    print(f"Fare for 18 km trip with SilverServiceTaxi (fanciness=2): ${fare:.2f}")
+
+    # Test assert for the fare calculation
+    expected_fare = (18 * 1.23 * 2) + 4.50  # 1.23 is base price per km, multiplied by fanciness
+    assert fare == expected_fare, f"Expected ${expected_fare}, but got ${fare}"
 
 
-if __name__ == '__main__':
-    main()
+# Run the test
+test_silver_service_taxi()
