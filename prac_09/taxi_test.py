@@ -1,22 +1,22 @@
 from prac_09.taxi import Taxi
 
 def main():
-    """Test code for the Taxi class."""
-    # Create a new taxi object
+    """Test code for the Taxi class using class variable price_per_km."""
+    # Create a new Taxi instance (no need to pass price_per_km now)
     my_taxi = Taxi("Prius 1", 100)
 
     # Drive the taxi 40 km
     my_taxi.drive(40)
 
-    # Print the taxi's details and the current fare
+    # Print taxi details and current fare
     print(my_taxi)
     print(f"Current fare: ${my_taxi.get_fare():.2f}")
 
-    # Restart the meter and then drive the car 100 km
+    # Start a new fare and drive 100 km
     my_taxi.start_fare()
     my_taxi.drive(100)
 
-    # Print the details and the current fare
+    # Print taxi details and current fare again
     print(my_taxi)
     print(f"Current fare: ${my_taxi.get_fare():.2f}")
 
